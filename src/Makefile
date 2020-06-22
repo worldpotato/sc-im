@@ -181,8 +181,8 @@ $(name)qref: sc.h
 
 $(OBJS) : y.tab.h experres.h statres.h
 
-#y.tab.h : gram.y gram.c
-#	test -f y.tab.c && mv y.tab.c gram.c
+y.tab.h : gram.y gram.c
+	test -f y.tab.c && mv y.tab.c gram.c
 
 gram.c : gram.y
 	$(YACC) -d $<
